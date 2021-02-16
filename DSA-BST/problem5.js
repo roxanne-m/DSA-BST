@@ -15,11 +15,13 @@ function bstHeight(tree){
     }
 
     if(tree.left){
+        // leftHeight storing the amount of times function is called
         leftHeight = bstHeight(tree.left);
         // console.log(leftHeight);
     }
 
     if(tree.right){
+         // rightHeight storing the amount of times function is called
         rightHeight = bstHeight(tree.right);
         // console.log(rightHeight);
     }
@@ -31,20 +33,24 @@ function bstHeight(tree){
 const test1 = {
     value: 4,
     left: {
-        value: 2,
+        value: 3,
         left: {
-            value: 1,
-            left: null,
+            value: 2,
+            left: {
+                value: 1,
+                left: null,
+                right: null
+            },
             right: null
         },
         right: null
     },
     right: {
-        value: 3,
+        value: 5,
         left: null,
         right: null
     }
 }
 console.log(bstHeight(test1));
 
-// Time complexity: This is a recursive function and the time complexity is O(n)??
+// Time complexity: This is a recursive function and the time complexity best case: O(1), worst case: O(n)???
